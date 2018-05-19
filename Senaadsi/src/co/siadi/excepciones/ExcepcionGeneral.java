@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.senaadsi.exeption;
+package co.siadi.excepciones;
 
 /**
  *
- * @author APRENDIZ SENA
+ * @author SOPORTE
  */
-public class EcepcionGeneral extends RunTimeException {
-    
-    public EcepcionGeneral() {
+public class ExcepcionGeneral extends RuntimeException{
+    public ExcepcionGeneral(){
         this("Ocurrio una excepcion");
     }
-    
-    public EcepcionGeneral (String masaje) {
-        super (mensaje);
+    public ExcepcionGeneral(String mensaje){
+        super(mensaje);
     }
+    
     
 }

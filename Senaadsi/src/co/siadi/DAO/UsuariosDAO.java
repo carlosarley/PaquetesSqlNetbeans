@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.senaadsi.dao;
+package co.siadi.DAO;
+
+import co.siadi.modelo.Usuario;
 
 /**
  *
  * @author SOPORTE
  */
-public interface CursoDAO extends DAO {
+public interface UsuariosDAO extends DAO<Integer, Usuario> {
     
 }

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.senaadsi.modelo;
+package ejecutable;
 
 /**
  *
  * @author SOPORTE
  */
-public class FormaPago {
+public class java {
     
 }
