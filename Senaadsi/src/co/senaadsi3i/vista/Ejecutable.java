@@ -17,10 +17,10 @@ public class Ejecutable {
         Usuario usuario = new Usuario();
         
         usuario.setIdUsuario(1);
-        usuario.setDocumento("1031180251");
-        usuario.setNombres("SANTIAGO");
-        usuario.setApellidos("MOLANO");
-        usuario.setTelefono("3727055");
+        usuario.setDocumento("1020775856");
+        usuario.setNombres("CARLOS");
+        usuario.setApellidos("TAMAYO");
+        usuario.setTelefono("671730");
         
         UsuariosDAOImplementacion udi = new UsuariosDAOImplementacion();
         udi.insertar(usuario);

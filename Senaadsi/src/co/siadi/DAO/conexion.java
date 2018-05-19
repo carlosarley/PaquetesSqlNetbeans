@@ -17,7 +17,7 @@ public class conexion {
 
     Connection conectar() throws SQLException {
         Connection conexion = null;
-        String url = "jdbc:mysql://127.0.0.1/SIADI";
+        String url = "jdbc:mysql://localhost/mydb";
         try {
             conexion = DriverManager.getConnection(url, "root" ,"");
         } catch (SQLException sqle) {

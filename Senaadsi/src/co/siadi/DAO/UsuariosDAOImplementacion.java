@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class UsuariosDAOImplementacion implements UsuariosDAO {
 
-    private final String INSERTAR = "INSERT INTO USUARIOS (idUsuario, documento, nombres, apellidos, telefono) VALUES (?, ?, ?, ?, ?)";
+    private final String INSERTAR = "INSERT INTO Ususarios (idUsusarios, documento, nombres, apellidos, telefono) VALUES (?, ?, ?, ?, ?)";
 
     private Connection conexion;
     private PreparedStatement sentencia;
@@ -31,7 +31,7 @@ public class UsuariosDAOImplementacion implements UsuariosDAO {
      try{
         conexion = new conexion().conectar();
         sentencia = conexion.prepareStatement(INSERTAR, Statement.RETURN_GENERATED_KEYS);
-        sentencia.setInt(1, o.getIdUsuario());
+        sentencia.setInt(1, o.getIdUsuario()); 
         sentencia.setString(2, o.getDocumento());
         sentencia.setString(3, o.getNombres());
         sentencia.setString(4, o.getApellidos());
