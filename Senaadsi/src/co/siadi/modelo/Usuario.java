@@ -20,6 +20,15 @@ public class Usuario {
        
     }
 
+    public Usuario(int idUsuario, String documento, String nombres, String apellidos, String telefono) {
+        this.idUsuario = idUsuario;
+        this.documento = documento;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.telefono = telefono;
+    }
+    
+
     public int getIdUsuario() {
         return idUsuario;
     }

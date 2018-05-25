@@ -16,14 +16,15 @@ public class Ejecutable {
     public static void main(String[] args) {
         Usuario usuario = new Usuario();
         
-        usuario.setIdUsuario(1);
+        usuario.setIdUsuario(2);
         usuario.setDocumento("1020775856");
-        usuario.setNombres("CARLOS");
-        usuario.setApellidos("TAMAYO");
-        usuario.setTelefono("671730");
+        usuario.setNombres("ANDRES");
+        usuario.setApellidos("mendez");
+        usuario.setTelefono("671731");
+        
         
         UsuariosDAOImplementacion udi = new UsuariosDAOImplementacion();
-        udi.insertar(usuario);
+        udi.modificar(usuario);
         
     }
 }

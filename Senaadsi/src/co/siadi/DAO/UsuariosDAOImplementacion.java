@@ -5,6 +5,7 @@
  */
 package co.siadi.DAO;
 
+
 import co.siadi.excepciones.ExcepcionGeneral;
 import co.siadi.modelo.Usuario;
 import java.sql.Connection;
@@ -21,11 +22,15 @@ import java.util.List;
 public class UsuariosDAOImplementacion implements UsuariosDAO {
 
     private final String INSERTAR = "INSERT INTO Ususarios (idUsusarios, documento, nombres, apellidos, telefono) VALUES (?, ?, ?, ?, ?)";
-
+    private final String MODIFICAR = "UPDATE Ususarios set documento = ?, nombres = ?, apellidos = ?, telefono = ? WHERE idUsusarios = ?";
     private Connection conexion;
     private PreparedStatement sentencia;
     private ResultSet resultado;
 
+    /**
+     *
+     * @param o
+     */
     @Override
     public void insertar(Usuario o) {
      try{
@@ -55,9 +60,30 @@ public class UsuariosDAOImplementacion implements UsuariosDAO {
 
     @Override
     public void modificar(Usuario o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+        
+        try {
+        conexion = new conexion().conectar();
+        sentencia = conexion.prepareStatement(MODIFICAR);
+         
+        sentencia.setString(1, o.getDocumento());
+        sentencia.setString(2, o.getNombres());
+        sentencia.setString(3, o.getApellidos());
+        sentencia.setString(4, o.getTelefono());
+        sentencia.setInt(5, o.getIdUsuario());
+        if (sentencia.executeUpdate()==0){
+            throw  new ExcepcionGeneral("no se modifico ningun registro");
+        }        
+     } catch (SQLException sqle)
+     {
+         throw new ExcepcionGeneral (sqle.getMessage());
+     }
+     finally {
+         cerrarConexiones();
+     }
+    }           
+                           
+        
+     
     @Override
     public void eliminar(Usuario o) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
